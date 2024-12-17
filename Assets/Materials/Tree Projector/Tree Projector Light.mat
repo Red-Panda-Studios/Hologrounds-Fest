@@ -15,6 +15,7 @@ Material:
   - BSSBLOOMFOGTYPE_HEIGHT
   - POI_AL_VOLUMECOLOR
   - POI_AUDIOLINK
+  - POI_MATCAP0
   - VIGNETTE_MASKED
   - _LIGHTINGMODE_FLAT
   - _RIM2STYLE_POIYOMI
@@ -304,7 +305,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9bb7c453de514554db5dbb8a2cfc672b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap0NormalMap:
@@ -1975,7 +1976,7 @@ Material:
     - _Matcap4TPSMaskStrength: 1
     - _Matcap4UVMode: 1
     - _Matcap4UVToBlend: 1
-    - _MatcapAdd: 0
+    - _MatcapAdd: 1
     - _MatcapAddToLight: 0
     - _MatcapAlphaOverride: 0
     - _MatcapApplyToAlphaBlendType: 0
@@ -1985,8 +1986,8 @@ Material:
     - _MatcapBaseColorMix: 0
     - _MatcapBorder: 0.43
     - _MatcapColorThemeIndex: 0
-    - _MatcapEmissionStrength: 0
-    - _MatcapEnable: 0
+    - _MatcapEmissionStrength: 2.37
+    - _MatcapEnable: 1
     - _MatcapHueShift: 0
     - _MatcapHueShiftColorSpace: 0
     - _MatcapHueShiftEnabled: 0
@@ -1995,7 +1996,7 @@ Material:
     - _MatcapLightMask: 0
     - _MatcapMaskChannel: 0
     - _MatcapMaskGlobalMask: 0
-    - _MatcapMaskGlobalMaskBlendType: 2
+    - _MatcapMaskGlobalMaskBlendType: 7
     - _MatcapMaskInvert: 0
     - _MatcapMaskSmoothnessApply: 0
     - _MatcapMaskSmoothnessChannel: 3
@@ -2003,7 +2004,7 @@ Material:
     - _MatcapMixed: 0
     - _MatcapMultiply: 0
     - _MatcapNormal: 1
-    - _MatcapReplace: 1
+    - _MatcapReplace: 0
     - _MatcapRotation: 0
     - _MatcapScreen: 0
     - _MatcapSmoothness: 1
@@ -2684,7 +2685,7 @@ Material:
     - footer_patreon: 0
     - footer_twitter: 0
     - footer_youtube: 0
-    - m_AudioLinkCategory: 1
+    - m_AudioLinkCategory: 0
     - m_OutlineCategory: 0
     - m_end_ALDecalSpectrum: 0
     - m_end_ALVolumeColor: 0
@@ -2945,7 +2946,7 @@ Material:
     - m_start_flipBook: 0
     - m_start_glitter: 0
     - m_start_internalparallax: 0
-    - m_start_matcap: 0
+    - m_start_matcap: 1
     - m_start_mirrorOptions: 0
     - m_start_normalCorrect: 0
     - m_start_outlineAlphaBlending: 0
@@ -3653,7 +3654,7 @@ Material:
     - _Matcap4Color: {r: 1, g: 1, b: 1, a: 1}
     - _Matcap4MaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _Matcap4Pan: {r: 0, g: 0, b: 0, a: 0}
-    - _MatcapColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MatcapColor: {r: 1, g: 0.4764151, b: 0.9118172, a: 1}
     - _MatcapMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _MatcapPan: {r: 0, g: 0, b: 0, a: 0}
     - _MirrorColor: {r: 1, g: 1, b: 1, a: 1}

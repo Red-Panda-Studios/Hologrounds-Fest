@@ -13,6 +13,8 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - BSSBLOOMFOGTYPE_HEIGHT
+  - POI_AL_VOLUMECOLOR
+  - POI_AUDIOLINK
   - VIGNETTE_MASKED
   - _LIGHTINGMODE_FLAT
   - _RIM2STYLE_POIYOMI
@@ -59,7 +61,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BackFaceTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: cc1a1dbb6dd6c25449e2e44434086b1b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BacklightColorTex:
@@ -588,11 +590,11 @@ Material:
     - _ALDecalVolumeColorSource: 1
     - _ALDecalVolumeStep: 0
     - _ALHighEmission: 0
-    - _ALLowEmission: 0
+    - _ALLowEmission: 7.33
     - _ALMidEmission: 0
     - _ALUVRotation: 0
     - _ALUVRotationSpeed: 0
-    - _ALVolumeColorBlendAlpha: 1
+    - _ALVolumeColorBlendAlpha: 0.85
     - _ALVolumeColorBlendType: 0
     - _ALVolumeColorDirection: 0
     - _ALVolumeColorHighThemeIndex: 0
@@ -603,7 +605,7 @@ Material:
     - _AddBlendOpAlpha: 4
     - _AddDstBlend: 1
     - _AddDstBlendAlpha: 1
-    - _AddSrcBlend: 1
+    - _AddSrcBlend: 5
     - _AddSrcBlendAlpha: 0
     - _Add_Antipodean_Rim2Light: 0
     - _Add_Antipodean_RimLight: 0
@@ -781,7 +783,7 @@ Material:
     - _BackFaceColorThemeIndex: 0
     - _BackFaceDetailIntensity: 1
     - _BackFaceEmissionLimiter: 1
-    - _BackFaceEmissionStrength: 0
+    - _BackFaceEmissionStrength: 3.75
     - _BackFaceEnabled: 0
     - _BackFaceHueShift: 0
     - _BackFaceHueShiftEnabled: 0
@@ -897,12 +899,12 @@ Material:
     - _CubeMapUVMode: 1
     - _CubeMapWorldNormalsStrength: 1
     - _CubemapBlendType: 0
-    - _Cull: 2
+    - _Cull: 0
     - _CurvFix: 1
     - _CurvatureU: 0
     - _CurvatureV: 0
     - _CustomColors: 0
-    - _Cutoff: 0
+    - _Cutoff: 0.002
     - _Decal0ApplyGlobalMaskBlendType: 0
     - _Decal0ApplyGlobalMaskIndex: 0
     - _Decal0ChannelSeparation: 0
@@ -1177,7 +1179,7 @@ Material:
     - _DistortionStrength1AudioLinkBand: 0
     - _DistortionStrengthAudioLinkBand: 0
     - _DistortionUvToDistort: 0
-    - _DstBlend: 1
+    - _DstBlend: 10
     - _DstBlendAlpha: 1
     - _EmissionAL0Enabled: 0
     - _EmissionAL0MultipliersBand: 0
@@ -1305,7 +1307,7 @@ Material:
     - _EmissiveScroll_Width3: 10
     - _EnableALDecal: 0
     - _EnableAniso: 0
-    - _EnableAudioLink: 0
+    - _EnableAudioLink: 1
     - _EnableDepthBulge: 0
     - _EnableDepthRimLighting: 0
     - _EnableDissolve: 0
@@ -1329,7 +1331,7 @@ Material:
     - _EnableRimLighting: 0
     - _EnableTouchGlow: 0
     - _EnableUDIMDiscardOptions: 0
-    - _EnableVolumeColor: 0
+    - _EnableVolumeColor: 1
     - _FFBFOutlineStencilHelp0: 0
     - _FFBFOutlineStencilHelp1: 0
     - _FFBFStencilHelp0: 0
@@ -2049,7 +2051,7 @@ Material:
     - _MochieSpecularStrengthGlobalMask: 0
     - _MochieSpecularStrengthGlobalMaskBlendType: 2
     - _MochieSpecularTintThemeIndex: 0
-    - _Mode: 4
+    - _Mode: 2
     - _ModelAngleMax: 90
     - _ModelAngleMin: 45
     - _MultilayerMathBlurMapUV: 0
@@ -2070,7 +2072,7 @@ Material:
     - _OutlineBlendOpAlpha: 4
     - _OutlineClipAtZeroWidth: 0
     - _OutlineCull: 1
-    - _OutlineDstBlend: 1
+    - _OutlineDstBlend: 10
     - _OutlineDstBlendAlpha: 1
     - _OutlineEmission: 0
     - _OutlineExpansionMode: 1
@@ -2085,7 +2087,7 @@ Material:
     - _OutlineRimLightBlend: 0
     - _OutlineShadowStrength: 0
     - _OutlineSpace: 0
-    - _OutlineSrcBlend: 1
+    - _OutlineSrcBlend: 5
     - _OutlineSrcBlendAlpha: 1
     - _OutlineStencilBackCompareFunction: 8
     - _OutlineStencilBackFailOp: 0
@@ -2470,7 +2472,7 @@ Material:
     - _SphericalDissolveClamp: 0
     - _SphericalDissolveInvert: 0
     - _SphericalDissolveRadius: 1.5
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _SrcBlendAlpha: 1
     - _SssBumpBlur: 0.7
     - _SssScale: 1
@@ -2683,7 +2685,7 @@ Material:
     - footer_patreon: 0
     - footer_twitter: 0
     - footer_youtube: 0
-    - m_AudioLinkCategory: 0
+    - m_AudioLinkCategory: 1
     - m_OutlineCategory: 0
     - m_end_ALDecalSpectrum: 0
     - m_end_ALVolumeColor: 0
@@ -2830,7 +2832,7 @@ Material:
     - m_renderingCategory: 0
     - m_specialFXCategory: 0
     - m_start_ALDecalSpectrum: 0
-    - m_start_ALVolumeColor: 0
+    - m_start_ALVolumeColor: 1
     - m_start_Alpha: 0
     - m_start_Aniso: 0
     - m_start_BeatsaberBloomFog: 0
@@ -3375,7 +3377,7 @@ Material:
     - _ALUVPosition: {r: 0.5, g: 0.5, b: 1, a: 1}
     - _ALUVScale: {r: 1, g: 1, b: 1, a: 1}
     - _ALVolumeColorHigh: {r: 1, g: 0, b: 0, a: 1}
-    - _ALVolumeColorLow: {r: 0, g: 0, b: 1, a: 1}
+    - _ALVolumeColorLow: {r: 1, g: 0, b: 0.797163, a: 1}
     - _ALVolumeColorMid: {r: 0, g: 1, b: 0, a: 1}
     - _AlphaAudioLinkAddRange: {r: 0, g: 0, b: 0, a: 1}
     - _AlphaColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3467,7 +3469,7 @@ Material:
     - _ClearCoatReflectionTint: {r: 1, g: 1, b: 1, a: 1}
     - _ClearCoatSpecularTint: {r: 1, g: 1, b: 1, a: 1}
     - _ClothMetallicSmoothnessMapPan: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _CubeMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _CubeMapMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _CubeMapRotation: {r: 0, g: 0, b: 0, a: 0}
