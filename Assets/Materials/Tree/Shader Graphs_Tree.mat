@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_Tree
+  m_Shader: {fileID: -6465566751694194690, guid: 99b2d4114cf7e2c4bbea140282422d69,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DFG:
+        m_Texture: {fileID: 2800000, guid: 83d5abfd23f37a645bb0bc0e39aae43a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GridTexture:
+        m_Texture: {fileID: 2800000, guid: 0443dc01525bb9e48b8258d083833994, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Triplanar_169edfa59d9e43d98d6c9f76815b7b39_Texture_1_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _AudioHueShift: 0
+    - _Band: 0
+    - _Blend: 0
+    - _BumpScale: 1
+    - _CullMode: 2
+    - _Delay: 0
+    - _DstBlend: 0
+    - _Emission: 1
+    - _GridBrightness: 3
+    - _GridScale: 8
+    - _Metallic: 0
+    - _OutlineStencilComp: 8
+    - _OutlineStencilCompBack: 8
+    - _OutlineStencilCompFront: 8
+    - _OutlineStencilFail: 0
+    - _OutlineStencilFailBack: 0
+    - _OutlineStencilFailFront: 0
+    - _OutlineStencilPass: 0
+    - _OutlineStencilPassBack: 0
+    - _OutlineStencilPassFront: 0
+    - _OutlineStencilReadMask: 255
+    - _OutlineStencilRef: 0
+    - _OutlineStencilWriteMask: 255
+    - _OutlineStencilZFail: 0
+    - _OutlineStencilZFailBack: 0
+    - _OutlineStencilZFailFront: 0
+    - _Pulse: 0
+    - _PulseRotation: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Smoothness: 0.5
+    - _SrcBlend: 1
+    - _StencilComp: 8
+    - _StencilCompBack: 8
+    - _StencilCompFront: 8
+    - _StencilFail: 0
+    - _StencilFailBack: 0
+    - _StencilFailFront: 0
+    - _StencilPass: 0
+    - _StencilPassBack: 0
+    - _StencilPassFront: 0
+    - _StencilReadMask: 255
+    - _StencilRef: 0
+    - _StencilWriteMask: 255
+    - _StencilZFail: 0
+    - _StencilZFailBack: 0
+    - _StencilZFailFront: 0
+    - _Surface: 0
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _ZWriteControl: 0
+    m_Colors:
+    - _Color: {r: 0.49803913, g: 0.49803913, b: 0.49803913, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GridBottomColor: {r: 1, g: 0, b: 0.9160185, a: 1}
+    - _GridMovement: {r: 0.125, g: -0.15, b: 0.1, a: 0}
+    - _GridTopColor: {r: 1, g: 0.08962262, b: 0.9333515, a: 1}
+    - _GridZColorScaling: {r: 5.53, g: 1.84, b: 0, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0.6862745}
+  m_BuildTextureStacks: []
+--- !u!114 &2682432799149381436
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
