@@ -15,7 +15,6 @@ SpecialFX/DepthFX/Fade Near Object;7f69070d31374934ebfbe640a341423e
 Lighting/Toon Hard Shadow;b84dedf1d78543840bd79dea015df1bc
 Lighting/UTS Style Additve;263ce9a6f95a3ed4fa4d929f17432957
 Rendering/Reduce Clip Distance;16015d7685d651f499367599c40abd08
-SpecialFX/Emission/RainbowStars;713337a7a8bdc924eac570ed93dfc39f
 Shading/Shading/Cloth;2807a42a52df1c44d97cf5e17934fb66
 Rendering/Blending/Multiplicative;53779bff985e564418cefaec06626aac
 Rendering/Blending/Premultiplied;32df3e6e5a32ef24eaff3150c42d98e4
@@ -44,3 +43,4 @@ Shading/Shading/lil Toon;b7ef0798bfb2152479b2ec8ace110aee
 Shading/Cubemap/Skybox;5d8da54b7658ecb4a82a6ee900d654a0
 Lighting/Realistic;c307c1f8bf70e944e83e2db5de65c395
 Shading/Shading/Shade Maps;0dfb68f3451a286408b0be70c899a6c2
+SpecialFX/Emission/RainbowStars;713337a7a8bdc924eac570ed93dfc39f

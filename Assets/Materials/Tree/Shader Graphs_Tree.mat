@@ -43,7 +43,7 @@ Material:
     - _CullMode: 2
     - _DstBlend: 0
     - _GridBrightness: 3
-    - _GridScale: 8
+    - _GridScale: 4
     - _OutlineStencilComp: 8
     - _OutlineStencilCompBack: 8
     - _OutlineStencilCompFront: 8
@@ -61,7 +61,7 @@ Material:
     - _OutlineStencilZFailFront: 0
     - _PhaseOffset: 1.1
     - _PhaseSize: 0.1
-    - _PhaseSpeed: 1
+    - _PhaseSpeed: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 1
@@ -93,7 +93,7 @@ Material:
     - _GridTopColor: {r: 0, g: 0, b: 0, a: 1}
     - _GridZColorScaling: {r: 1.33, g: 1.84, b: 0, a: 0}
     - _PhaseMovementDirection: {r: 0, g: 0, b: -0.1, a: 0}
-    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0.85882354}
   m_BuildTextureStacks: []
 --- !u!114 &2682432799149381436
 MonoBehaviour:
