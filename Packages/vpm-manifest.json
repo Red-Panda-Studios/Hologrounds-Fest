@@ -20,6 +20,9 @@
     },
     "com.poiyomi.toon": {
       "version": "9.0.61"
+    },
+    "com.acchosen.vr-stage-lighting": {
+      "version": "2.7.1"
     }
   },
   "locked": {
@@ -52,6 +55,12 @@
     "com.poiyomi.toon": {
       "version": "9.0.61",
       "dependencies": {}
+    },
+    "com.acchosen.vr-stage-lighting": {
+      "version": "2.7.1",
+      "dependencies": {
+        "com.llealloo.audiolink": ">=0.3.1"
+      }
     }
   }
 }
