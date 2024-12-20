@@ -3,7 +3,12 @@ guid: e3eef5fc48b60374689b2d06571b86fe
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree Projector Glow
+    second: {fileID: 2100000, guid: 506771de2b6f16f4494d9cad34491466, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

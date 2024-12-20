@@ -23,7 +23,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Screen
-    second: {fileID: 2100000, guid: 0a3dd7c7ec82f31459e49fb266b30ffc, type: 2}
+    second: {fileID: 2100000, guid: 506771de2b6f16f4494d9cad34491466, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -34,6 +34,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Stage Base
     second: {fileID: 2100000, guid: 42f69a3252019374085165b8c61e5e29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage Glow
+    second: {fileID: 2100000, guid: 506771de2b6f16f4494d9cad34491466, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
