@@ -286,22 +286,58 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 		[VectorToSliders(Bass, 0, 1, Low Mid, 0, 1, High Mid, 0, 1, Treble, 0, 1)]_AudioLinkBandOverrideSliders ("Band Override Sliders", Vector) = (0, 0, 0, 0)
 		[HideInInspector] s_end_AudioLinkBandOverrides ("Audio Link", Float) = 0
 		[HideInInspector] m_end_audioLinkOverrides ("Overrides", Float) = 0
-		[HideInInspector] m_start_ALVolumeColor ("AL ♫ Volume Color--{  reference_property:_EnableVolumeColor, button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/audio-link/volume-color},hover:Documentation}}", Float) = 0
-		[HideInInspector][ThryToggle(POI_AL_VOLUMECOLOR)]_EnableVolumeColor ("Enable AL Volume Color", Float) = 0
-		[Enum(UV0, 0, UV1, 1, UV2, 2, UV3, 3)] _ALVolumeColorUV ("UV", Int) = 0
-		[Enum(X, 0, Y, 1)] _ALVolumeColorDirection ("UV Direction", Int) = 0
-		[ThryWideEnum(Replace, 0, Darken, 1, Multiply, 2, Lighten, 5, Screen, 6, Subtract, 7, Add, 8, Overlay, 9, Mixed, 20)]_ALVolumeColorBlendType ("Blend Type", Range(0, 1)) = 0
-		_ALVolumeColorBlendAlpha ("Alpha", Range(0,1)) = 1
-		_ALVolumeColorLow ("Volume Color Low--{reference_property:_ALVolumeColorLowThemeIndex}", Color) = (0, 0, 1)
-		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _ALVolumeColorLowThemeIndex ("", Int) = 0
-		_ALLowEmission ("Low Emission", Range(0, 20)) = 0
-		_ALVolumeColorMid ("Volume Color Mid--{reference_property:_ALVolumeColorMidThemeIndex}", Color) = (0, 1, 0)
-		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _ALVolumeColorMidThemeIndex ("", Int) = 0
-		_ALMidEmission ("Mid Emission", Range(0, 20)) = 0
-		_ALVolumeColorHigh ("Volume Color High--{reference_property:_ALVolumeColorHighThemeIndex}", Color) = (1, 0, 0)
-		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _ALVolumeColorHighThemeIndex ("", Int) = 0
-		_ALHighEmission ("High Emission", Range(0, 20)) = 0
-		[HideInInspector] m_end_ALVolumeColor ("AL ♫ Volume Color", Float) = 0
+		[HideInInspector] m_start_ALDecalSpectrum ("AL ♫ Spectrum--{  reference_property:_EnableALDecal, button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/audio-link/spectrum},hover:Documentation}}", Float) = 0
+		[HideInInspector][ThryToggle(POI_AL_DECAL)]_EnableALDecal ("Enable AL Decal", Float) = 0
+		[HideInInspector][ThryWideEnum(lil Spectrum, 0)] _ALDecalType ("AL Type--{ condition_showS:_EnableAudioLink==1}", Int) = 0
+		[ThryHeaderLabel(Transform, 13)]
+		[Space(4)]
+		[Enum(Normal, 0, Circle, 1)] _ALDecalUVMode ("UV Mode", Float) = 0
+		[ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos, 5, Local Pos, 8, Polar UV, 6, Distorted UV, 7)] _ALDecalUV ("UV", Int) = 0
+		[Vector2]_ALUVPosition ("Position", Vector) = (.5, .5, 1)
+		_ALUVScale ("Scale", Vector) = (1, 1, 1, 1)
+		_ALUVRotation ("Rotation", Range(0, 360)) = 0
+		_ALUVRotationSpeed ("Rotation Speed", Float) = 0
+		_ALDecalLineWidth ("Line Width", Range(0, 1)) = 1.0
+		_ALDecaldCircleDimensions ("Cirlce Dimensions--{ condition_showS:_ALDecalUVMode==1}", Vector) = (0, 1, 0, 1)
+		[Space][ThryHeaderLabel(Volume, 13)]
+		[Space(4)]
+		_ALDecalVolumeStep ("Volume Step Num (0 = Off)", Float) = 0.0
+		_ALDecalVolumeClipMin ("Volume Clip Min", Range(0, 1)) = 0.0
+		_ALDecalVolumeClipMax ("Volume Clip Max", Range(0, 1)) = 1.0
+		[Space][ThryHeaderLabel(Band, 13)]
+		[Space(4)]
+		_ALDecalBandStep ("Band Step Num (0 = Off)", Float) = 0.0
+		_ALDecalBandClipMin ("Band Clip Min", Range(0, 1)) = 0.0
+		_ALDecalBandClipMax ("Band Clip Max", Range(0, 1)) = 1.0
+		[Space][ThryToggleUI(true)]_ALDecalShapeClip ("<size=13><b>  Shape Clip</b></size>", Float) = 0
+		_ALDecalShapeClipVolumeWidth ("Volume Width--{ condition_showS:_ALDecalShapeClip==1}", Range(0, 1)) = 0.5
+		_ALDecalShapeClipBandWidth ("Band Width--{ condition_showS:_ALDecalShapeClip==1}", Range(0, 1)) = 0.5
+		[Space][ThryHeaderLabel(Audio Mods, 13)]
+		[Space(4)]
+		_ALDecalVolume ("Volume", Int) = 0.5
+		_ALDecalBaseBoost ("Bass Boost", Float) = 5.0
+		_ALDecalTrebleBoost ("Treble Boost", Float) = 1.0
+		[Space][ThryHeaderLabel(Colors and Blending, 13)]
+		[Space(4)]
+		[sRGBWarning(true)][ThryRGBAPacker(RGB Color, A Mask, sRGB, false)]_ALDecalColorMask ("Color & Mask--{reference_properties:[_ALDecalColorMaskPan, _ALDecalColorMaskUV]}", 2D) = "white" { }
+		[HideInInspector][Vector2]_ALDecalColorMaskPan ("Panning", Vector) = (0, 0, 0, 0)
+		[HideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos, 5, Local Pos, 8, Polar UV, 6, Distorted UV, 7)] _ALDecalColorMaskUV ("UV", Int) = 0
+		[Enum(UVX, 0, UVY, 1, Volume, 2)] _ALDecalVolumeColorSource ("Source", Int) = 1
+		_ALDecalVolumeColorLow ("Volume Color Low--{reference_property:_ALDecalVolumeColorLowThemeIndex}", Color) = (0, 0, 1)
+		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _ALDecalVolumeColorLowThemeIndex ("", Int) = 0
+		_ALDecalLowEmission ("Low Emission", Range(0, 20)) = 0
+		_ALDecalVolumeColorMid ("Volume Color Mid--{reference_property:_ALDecalVolumeColorMidThemeIndex}", Color) = (0, 1, 0)
+		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _ALDecalVolumeColorMidThemeIndex ("", Int) = 0
+		_ALDecalMidEmission ("Mid Emission", Range(0, 20)) = 0
+		_ALDecalVolumeColorHigh ("Volume Color High--{reference_property:_ALDecalVolumeColorHighThemeIndex}", Color) = (1, 0, 0)
+		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _ALDecalVolumeColorHighThemeIndex ("", Int) = 0
+		_ALDecalHighEmission ("High Emission", Range(0, 20)) = 0
+		[ThryWideEnum(Replace, 0, Darken, 1, Multiply, 2, Lighten, 5, Screen, 6, Subtract, 7, Add, 8, Overlay, 9, Mixed, 20)]_ALDecalBlendType ("Blend Type", Range(0, 1)) = 0
+		_ALDecalBlendAlpha ("Alpha", Range(0, 1)) = 1
+		_ALDecalControlsAlpha ("Override Alpha", Range(0, 1)) = 0
+		[ThryWideEnum(Off, 0, 1R, 1, 1G, 2, 1B, 3, 1A, 4, 2R, 5, 2G, 6, 2B, 7, 2A, 8, 3R, 9, 3G, 10, 3B, 11, 3A, 12, 4R, 13, 4G, 14, 4B, 15, 4A, 16)] _ALDecalGlobalMask ("Global Mask--{reference_property:_ALDecalGlobalMaskBlendType}", Int) = 0
+		[HideInInspector][ThryWideEnum(Add, 7, Subtract, 1, Multiply, 2, Divide, 3, Min, 4, Max, 5, Average, 6, Replace, 0)] _ALDecalGlobalMaskBlendType ("Blending", Int) = 2
+		[HideInInspector] m_end_ALDecalSpectrum ("AL ♫ Spectrum", Float) = 0
 		[HideInInspector] m_modifierCategory ("Global Modifiers & Data", Float) = 0
 		[HideInInspector] m_start_PoiGlobalCategory ("Global Data and Masks", Float) = 0
 		[HideInInspector] m_start_GlobalThemes ("Global Themes--{button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/color-and-normals/global-themes},hover:Documentation}}", Float) = 0
@@ -463,7 +499,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 			BlendOp [_BlendOp], [_BlendOpAlpha]
 			Blend [_SrcBlend] [_DstBlend], [_SrcBlendAlpha] [_DstBlendAlpha]
 			CGPROGRAM
- #define POI_AL_VOLUMECOLOR 
+ #define POI_AL_DECAL 
  #define POI_AUDIOLINK 
  #define VIGNETTE_MASKED 
  #define _GLOSSYREFLECTIONS_OFF 
@@ -796,20 +832,48 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 				float matcapALChronoPanSpeed;
 			};
 			#ifdef POI_AUDIOLINK
-			#ifdef POI_AL_VOLUMECOLOR
-			float _ALVolumeColorUV;
-			float _ALVolumeColorDirection;
-			float _ALVolumeColorBlendType;
-			float _ALVolumeColorBlendAlpha;
-			float3 _ALVolumeColorLow;
-			float _ALVolumeColorLowThemeIndex;
-			float3 _ALVolumeColorMid;
-			float _ALVolumeColorMidThemeIndex;
-			float3 _ALVolumeColorHigh;
-			float _ALVolumeColorHighThemeIndex;
-			float _ALLowEmission;
-			float _ALMidEmission;
-			float _ALHighEmission;
+			#ifdef POI_AL_DECAL
+			float _ALDecalUV;
+			float4 _ALUVScale;
+			float2 _ALUVPosition;
+			float _ALUVRotation;
+			float _ALUVRotationSpeed;
+			float4 _ALDecaldCircleDimensions;
+			float _ALDecalUVMode;
+			float _ALDecalVolumeStep;
+			float _ALDecalVolumeClipMin;
+			float _ALDecalVolumeClipMax;
+			float _ALDecalBandStep;
+			float _ALDecalBandClipMin;
+			float _ALDecalBandClipMax;
+			float _ALDecalShapeClip;
+			float _ALDecalShapeClipVolumeWidth;
+			float _ALDecalShapeClipBandWidth;
+			#if defined(PROP_ALDECALCOLORMASK) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _ALDecalColorMask;
+			float4 _ALDecalColorMask_ST;
+			float2 _ALDecalColorMaskPan;
+			float _ALDecalColorMaskUV;
+			#endif
+			float _ALDecalVolume;
+			float _ALDecalBaseBoost;
+			float _ALDecalTrebleBoost;
+			float _ALDecalLineWidth;
+			float _ALDecalVolumeColorSource;
+			float3 _ALDecalVolumeColorLow;
+			float _ALDecalVolumeColorLowThemeIndex;
+			float3 _ALDecalVolumeColorMid;
+			float _ALDecalVolumeColorMidThemeIndex;
+			float3 _ALDecalVolumeColorHigh;
+			float _ALDecalVolumeColorHighThemeIndex;
+			float _ALDecalLowEmission;
+			float _ALDecalMidEmission;
+			float _ALDecalHighEmission;
+			float _ALDecalBlendType;
+			float _ALDecalBlendAlpha;
+			float _ALDecalControlsAlpha;
+			float _ALDecalGlobalMask;
+			float _ALDecalGlobalMaskBlendType;
 			#endif
 			#endif
 			#ifdef _GLOSSYREFLECTIONS_OFF
@@ -3217,21 +3281,83 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 			}
 			#endif
 			#ifdef POI_AUDIOLINK
-			#ifdef POI_AL_VOLUMECOLOR
-			void ApplyAudioLinkVolumeColor(in PoiMesh poiMesh, inout PoiFragData poiFragData, in PoiMods poiMods)
+			#ifdef POI_AL_DECAL
+			void ApplyAudioLinkDecal(in PoiMesh poiMesh, inout PoiFragData poiFragData, in PoiMods poiMods)
 			{
-				float volume = AudioLinkLerpMultiline(ALPASS_DFT + float2(poiMesh.uv[(0.0 /*_ALVolumeColorUV*/)][(0.0 /*_ALVolumeColorDirection*/)] * AUDIOLINK_ETOTALBINS, 0.0)).b;
-				float3 lowColor = float4(0,0.9351287,1,1).rgb * poiThemeColor(poiMods, float4(0,0.9351287,1,1).rgb, (0.0 /*_ALVolumeColorLowThemeIndex*/));
-				float3 midColor = float4(0,1,0,1).rgb * poiThemeColor(poiMods, float4(0,1,0,1).rgb, (0.0 /*_ALVolumeColorMidThemeIndex*/));
-				float3 highColor = float4(1,0,0,1).rgb * poiThemeColor(poiMods, float4(1,0,0,1).rgb, (0.0 /*_ALVolumeColorHighThemeIndex*/));
-				float3 volumeColor = lerp(lowColor, midColor, saturate(volume * 2));
-				volumeColor = lerp(volumeColor, highColor, saturate(volume * 2 - 1));
-				float3 emissionColor = lerp(lowColor * (1.0 /*_ALLowEmission*/), midColor * (0.0 /*_ALMidEmission*/), saturate(volume * 2));
-				emissionColor = lerp(emissionColor, highColor * (0.0 /*_ALHighEmission*/), saturate(volume * 2 - 1));
-				#if defined(POI_PASS_BASE) || defined(POI_PASS_ADD)
-				poiFragData.emission += emissionColor * poiMods.audioLinkAvailable;
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor, customBlend(poiFragData.baseColor, volumeColor, (0.0 /*_ALVolumeColorBlendType*/)), saturate((0.0 /*_ALVolumeColorBlendAlpha*/) * poiMods.audioLinkAvailable));
+				float4 colorAndMask = float4(1, 1, 1, 1);
+				#if defined(PROP_ALDECALCOLORMASK) || !defined(OPTIMIZER_ENABLED)
+				colorAndMask = POI2D_SAMPLER_PAN(_ALDecalColorMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_ALDecalColorMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0));
 				#endif
+				if ((0.0 /*_ALDecalGlobalMask*/) > 0)
+				{
+					colorAndMask.a = customBlend(colorAndMask.a, poiMods.globalMask[(0.0 /*_ALDecalGlobalMask*/)-1], (2.0 /*_ALDecalGlobalMaskBlendType*/));
+				}
+				float2 uv = poiMesh.uv[(0.0 /*_ALDecalUV*/)];
+				float2 decalCenter = float4(0.5,0.5,1,1);
+				float theta = radians((0.0 /*_ALUVRotation*/) + _Time.z * (0.0 /*_ALUVRotationSpeed*/));
+				float cs = cos(theta);
+				float sn = sin(theta);
+				uv = float2((uv.x - decalCenter.x) * cs - (uv.y - decalCenter.y) * sn + decalCenter.x, (uv.x - decalCenter.x) * sn + (uv.y - decalCenter.y) * cs + decalCenter.y);
+				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0.5,0.5,1,1), float4(1,1,1,1).yw / 2 + float4(0.5,0.5,1,1), float2(0, 0), float2(1, 1));
+				float4 audioLinkMask = 1.0;
+				float2 aluv = uv;
+				if ((0.0 /*_ALDecalUVMode*/) == 1)
+				{
+					float2 uvdir = uv * 2 - 1;
+					aluv.x = frac(atan2(uvdir.y, uvdir.x) * UNITY_INV_TWO_PI);
+					aluv.y = length(uvdir);
+				}
+				float maskY = aluv.y;
+				if ((0.0 /*_ALDecalUVMode*/) == 1)
+				{
+					maskY = remap(maskY, float4(0,1,0,1).x, float4(0,1,0,1).y, 0, 1);
+				}
+				float maskX = aluv.x;
+				if ((0.0 /*_ALDecalUVMode*/) == 1)
+				{
+					maskX = remap(maskX, float4(0,1,0,1).z, float4(0,1,0,1).w, 0, 1);
+				}
+				float maskVolume = (0.0 /*_ALDecalVolumeStep*/) != 0.0 ? floor(maskY * (0.0 /*_ALDecalVolumeStep*/)) / (0.0 /*_ALDecalVolumeStep*/) : maskY;
+				float maskBand = (0.0 /*_ALDecalBandStep*/) != 0.0 ? floor(maskX * (0.0 /*_ALDecalBandStep*/)) / (0.0 /*_ALDecalBandStep*/) : maskX;
+				audioLinkMask.r = maskVolume;
+				audioLinkMask.g = maskBand;
+				audioLinkMask.b = maskVolume < (0.0 /*_ALDecalVolumeClipMin*/) || maskVolume > (1.0 /*_ALDecalVolumeClipMax*/) ? 0.0 : audioLinkMask.b;
+				audioLinkMask.b = maskBand < (0.0 /*_ALDecalBandClipMin*/) || maskBand > (1.0 /*_ALDecalBandClipMax*/) ? 0.0 : audioLinkMask.b;
+				if ((0.0 /*_ALDecalShapeClip*/))
+				{
+					float volumeth = (0.5 /*_ALDecalShapeClipVolumeWidth*/);
+					if ((0.0 /*_ALDecalVolumeStep*/) != 0.0) audioLinkMask.b = frac(maskY * (0.0 /*_ALDecalVolumeStep*/)) > volumeth ? 0.0 : audioLinkMask.b;
+					float bandwidth = (0.0 /*_ALDecalUVMode*/) == 1 ? (0.5 /*_ALDecalShapeClipBandWidth*/) / aluv.y : (0.5 /*_ALDecalShapeClipBandWidth*/);
+					float bandth = 1.0 - bandwidth;
+					if ((0.0 /*_ALDecalBandStep*/) != 0.0) audioLinkMask.b = frac(maskX * (0.0 /*_ALDecalBandStep*/) + bandth * 0.5) < bandth ? 0.0 : audioLinkMask.b;
+				}
+				float2 audioLinkUV = float2(frac(audioLinkMask.g * 2.0), 4.5 / 4.0 + floor(audioLinkMask.g * 2.0) / 4.0);
+				audioLinkUV.y *= 0.0625;
+				float4 audioTexture = _AudioTexture.Sample(sampler_linear_clamp, audioLinkUV);
+				float audioVal = audioTexture.b * (0.5 /*_ALDecalVolume*/) * lerp((5.0 /*_ALDecalBaseBoost*/), (1.0 /*_ALDecalTrebleBoost*/), audioLinkMask.g);
+				float audioLinkValue = (1.0 /*_ALDecalLineWidth*/) < 1.0 ? abs(audioVal - audioLinkMask.r) < (1.0 /*_ALDecalLineWidth*/) : audioVal > audioLinkMask.r * 2.0;
+				audioLinkValue = saturate(audioLinkValue) * audioLinkMask.b;
+				audioLinkValue *= colorAndMask.a;
+				if (!poiMods.audioLinkAvailable)
+				{
+					audioLinkValue = 0;
+				}
+				float3 alColorChord = _AudioTexture.Sample(sampler_linear_clamp, float2(maskX, 24.5 / 64.0)).rgb;
+				float volumeColorSrc = audioLinkMask.g;
+				if ((1.0 /*_ALDecalVolumeColorSource*/) == 1) volumeColorSrc = audioLinkMask.r;
+				if ((1.0 /*_ALDecalVolumeColorSource*/) == 2) volumeColorSrc = audioVal;
+				float3 lowColor = float4(0,0,1,1).rgb * poiThemeColor(poiMods, float4(0,0,1,1).rgb, (0.0 /*_ALDecalVolumeColorLowThemeIndex*/));
+				float3 midColor = float4(0,1,0,1).rgb * poiThemeColor(poiMods, float4(0,1,0,1).rgb, (0.0 /*_ALDecalVolumeColorMidThemeIndex*/));
+				float3 highColor = float4(1,0,0,1).rgb * poiThemeColor(poiMods, float4(1,0,0,1).rgb, (0.0 /*_ALDecalVolumeColorHighThemeIndex*/));
+				float3 volumeColor = lerp(lowColor, midColor, saturate(volumeColorSrc * 2));
+				volumeColor = lerp(volumeColor, highColor, saturate(volumeColorSrc * 2 - 1));
+				float3 emissionColor = lerp(lowColor * (0.0 /*_ALDecalLowEmission*/), midColor * (0.0 /*_ALDecalMidEmission*/), saturate(volumeColorSrc * 2));
+				emissionColor = lerp(emissionColor, highColor * (0.0 /*_ALDecalHighEmission*/), saturate(volumeColorSrc * 2 - 1));
+				#if defined(POI_PASS_BASE) || defined(POI_PASS_ADD)
+				poiFragData.emission += emissionColor * audioLinkValue;
+				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor, customBlend(poiFragData.baseColor, volumeColor * colorAndMask.rgb, (0.0 /*_ALDecalBlendType*/)), saturate((1.0 /*_ALDecalBlendAlpha*/) * audioLinkValue));
+				#endif
+				poiFragData.alpha = lerp(poiFragData.alpha, poiFragData.alpha * audioLinkValue, (0.0 /*_ALDecalControlsAlpha*/));
 			}
 			#endif
 			#endif
@@ -3903,8 +4029,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 				applyDecals(poiFragData, poiMesh, poiCam, poiMods, poiLight);
 				#endif
 				#ifdef POI_AUDIOLINK
-				#ifdef POI_AL_VOLUMECOLOR
-				ApplyAudioLinkVolumeColor(poiMesh, poiFragData, poiMods);
+				#ifdef POI_AL_DECAL
+				ApplyAudioLinkDecal(poiMesh, poiFragData, poiMods);
 				#endif
 				#endif
 				#ifdef _GLOSSYREFLECTIONS_OFF
@@ -3997,7 +4123,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 			BlendOp [_AddBlendOp], [_AddBlendOpAlpha]
 			Blend [_AddSrcBlend] [_AddDstBlend], [_AddSrcBlendAlpha] [_AddDstBlendAlpha]
 			CGPROGRAM
- #define POI_AL_VOLUMECOLOR 
+ #define POI_AL_DECAL 
  #define POI_AUDIOLINK 
  #define VIGNETTE_MASKED 
  #define _GLOSSYREFLECTIONS_OFF 
@@ -4329,20 +4455,48 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 				float matcapALChronoPanSpeed;
 			};
 			#ifdef POI_AUDIOLINK
-			#ifdef POI_AL_VOLUMECOLOR
-			float _ALVolumeColorUV;
-			float _ALVolumeColorDirection;
-			float _ALVolumeColorBlendType;
-			float _ALVolumeColorBlendAlpha;
-			float3 _ALVolumeColorLow;
-			float _ALVolumeColorLowThemeIndex;
-			float3 _ALVolumeColorMid;
-			float _ALVolumeColorMidThemeIndex;
-			float3 _ALVolumeColorHigh;
-			float _ALVolumeColorHighThemeIndex;
-			float _ALLowEmission;
-			float _ALMidEmission;
-			float _ALHighEmission;
+			#ifdef POI_AL_DECAL
+			float _ALDecalUV;
+			float4 _ALUVScale;
+			float2 _ALUVPosition;
+			float _ALUVRotation;
+			float _ALUVRotationSpeed;
+			float4 _ALDecaldCircleDimensions;
+			float _ALDecalUVMode;
+			float _ALDecalVolumeStep;
+			float _ALDecalVolumeClipMin;
+			float _ALDecalVolumeClipMax;
+			float _ALDecalBandStep;
+			float _ALDecalBandClipMin;
+			float _ALDecalBandClipMax;
+			float _ALDecalShapeClip;
+			float _ALDecalShapeClipVolumeWidth;
+			float _ALDecalShapeClipBandWidth;
+			#if defined(PROP_ALDECALCOLORMASK) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _ALDecalColorMask;
+			float4 _ALDecalColorMask_ST;
+			float2 _ALDecalColorMaskPan;
+			float _ALDecalColorMaskUV;
+			#endif
+			float _ALDecalVolume;
+			float _ALDecalBaseBoost;
+			float _ALDecalTrebleBoost;
+			float _ALDecalLineWidth;
+			float _ALDecalVolumeColorSource;
+			float3 _ALDecalVolumeColorLow;
+			float _ALDecalVolumeColorLowThemeIndex;
+			float3 _ALDecalVolumeColorMid;
+			float _ALDecalVolumeColorMidThemeIndex;
+			float3 _ALDecalVolumeColorHigh;
+			float _ALDecalVolumeColorHighThemeIndex;
+			float _ALDecalLowEmission;
+			float _ALDecalMidEmission;
+			float _ALDecalHighEmission;
+			float _ALDecalBlendType;
+			float _ALDecalBlendAlpha;
+			float _ALDecalControlsAlpha;
+			float _ALDecalGlobalMask;
+			float _ALDecalGlobalMaskBlendType;
 			#endif
 			#endif
 			#ifdef _GLOSSYREFLECTIONS_OFF
@@ -6746,21 +6900,83 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 			}
 			#endif
 			#ifdef POI_AUDIOLINK
-			#ifdef POI_AL_VOLUMECOLOR
-			void ApplyAudioLinkVolumeColor(in PoiMesh poiMesh, inout PoiFragData poiFragData, in PoiMods poiMods)
+			#ifdef POI_AL_DECAL
+			void ApplyAudioLinkDecal(in PoiMesh poiMesh, inout PoiFragData poiFragData, in PoiMods poiMods)
 			{
-				float volume = AudioLinkLerpMultiline(ALPASS_DFT + float2(poiMesh.uv[(0.0 /*_ALVolumeColorUV*/)][(0.0 /*_ALVolumeColorDirection*/)] * AUDIOLINK_ETOTALBINS, 0.0)).b;
-				float3 lowColor = float4(0,0.9351287,1,1).rgb * poiThemeColor(poiMods, float4(0,0.9351287,1,1).rgb, (0.0 /*_ALVolumeColorLowThemeIndex*/));
-				float3 midColor = float4(0,1,0,1).rgb * poiThemeColor(poiMods, float4(0,1,0,1).rgb, (0.0 /*_ALVolumeColorMidThemeIndex*/));
-				float3 highColor = float4(1,0,0,1).rgb * poiThemeColor(poiMods, float4(1,0,0,1).rgb, (0.0 /*_ALVolumeColorHighThemeIndex*/));
-				float3 volumeColor = lerp(lowColor, midColor, saturate(volume * 2));
-				volumeColor = lerp(volumeColor, highColor, saturate(volume * 2 - 1));
-				float3 emissionColor = lerp(lowColor * (1.0 /*_ALLowEmission*/), midColor * (0.0 /*_ALMidEmission*/), saturate(volume * 2));
-				emissionColor = lerp(emissionColor, highColor * (0.0 /*_ALHighEmission*/), saturate(volume * 2 - 1));
-				#if defined(POI_PASS_BASE) || defined(POI_PASS_ADD)
-				poiFragData.emission += emissionColor * poiMods.audioLinkAvailable;
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor, customBlend(poiFragData.baseColor, volumeColor, (0.0 /*_ALVolumeColorBlendType*/)), saturate((0.0 /*_ALVolumeColorBlendAlpha*/) * poiMods.audioLinkAvailable));
+				float4 colorAndMask = float4(1, 1, 1, 1);
+				#if defined(PROP_ALDECALCOLORMASK) || !defined(OPTIMIZER_ENABLED)
+				colorAndMask = POI2D_SAMPLER_PAN(_ALDecalColorMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_ALDecalColorMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0));
 				#endif
+				if ((0.0 /*_ALDecalGlobalMask*/) > 0)
+				{
+					colorAndMask.a = customBlend(colorAndMask.a, poiMods.globalMask[(0.0 /*_ALDecalGlobalMask*/)-1], (2.0 /*_ALDecalGlobalMaskBlendType*/));
+				}
+				float2 uv = poiMesh.uv[(0.0 /*_ALDecalUV*/)];
+				float2 decalCenter = float4(0.5,0.5,1,1);
+				float theta = radians((0.0 /*_ALUVRotation*/) + _Time.z * (0.0 /*_ALUVRotationSpeed*/));
+				float cs = cos(theta);
+				float sn = sin(theta);
+				uv = float2((uv.x - decalCenter.x) * cs - (uv.y - decalCenter.y) * sn + decalCenter.x, (uv.x - decalCenter.x) * sn + (uv.y - decalCenter.y) * cs + decalCenter.y);
+				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0.5,0.5,1,1), float4(1,1,1,1).yw / 2 + float4(0.5,0.5,1,1), float2(0, 0), float2(1, 1));
+				float4 audioLinkMask = 1.0;
+				float2 aluv = uv;
+				if ((0.0 /*_ALDecalUVMode*/) == 1)
+				{
+					float2 uvdir = uv * 2 - 1;
+					aluv.x = frac(atan2(uvdir.y, uvdir.x) * UNITY_INV_TWO_PI);
+					aluv.y = length(uvdir);
+				}
+				float maskY = aluv.y;
+				if ((0.0 /*_ALDecalUVMode*/) == 1)
+				{
+					maskY = remap(maskY, float4(0,1,0,1).x, float4(0,1,0,1).y, 0, 1);
+				}
+				float maskX = aluv.x;
+				if ((0.0 /*_ALDecalUVMode*/) == 1)
+				{
+					maskX = remap(maskX, float4(0,1,0,1).z, float4(0,1,0,1).w, 0, 1);
+				}
+				float maskVolume = (0.0 /*_ALDecalVolumeStep*/) != 0.0 ? floor(maskY * (0.0 /*_ALDecalVolumeStep*/)) / (0.0 /*_ALDecalVolumeStep*/) : maskY;
+				float maskBand = (0.0 /*_ALDecalBandStep*/) != 0.0 ? floor(maskX * (0.0 /*_ALDecalBandStep*/)) / (0.0 /*_ALDecalBandStep*/) : maskX;
+				audioLinkMask.r = maskVolume;
+				audioLinkMask.g = maskBand;
+				audioLinkMask.b = maskVolume < (0.0 /*_ALDecalVolumeClipMin*/) || maskVolume > (1.0 /*_ALDecalVolumeClipMax*/) ? 0.0 : audioLinkMask.b;
+				audioLinkMask.b = maskBand < (0.0 /*_ALDecalBandClipMin*/) || maskBand > (1.0 /*_ALDecalBandClipMax*/) ? 0.0 : audioLinkMask.b;
+				if ((0.0 /*_ALDecalShapeClip*/))
+				{
+					float volumeth = (0.5 /*_ALDecalShapeClipVolumeWidth*/);
+					if ((0.0 /*_ALDecalVolumeStep*/) != 0.0) audioLinkMask.b = frac(maskY * (0.0 /*_ALDecalVolumeStep*/)) > volumeth ? 0.0 : audioLinkMask.b;
+					float bandwidth = (0.0 /*_ALDecalUVMode*/) == 1 ? (0.5 /*_ALDecalShapeClipBandWidth*/) / aluv.y : (0.5 /*_ALDecalShapeClipBandWidth*/);
+					float bandth = 1.0 - bandwidth;
+					if ((0.0 /*_ALDecalBandStep*/) != 0.0) audioLinkMask.b = frac(maskX * (0.0 /*_ALDecalBandStep*/) + bandth * 0.5) < bandth ? 0.0 : audioLinkMask.b;
+				}
+				float2 audioLinkUV = float2(frac(audioLinkMask.g * 2.0), 4.5 / 4.0 + floor(audioLinkMask.g * 2.0) / 4.0);
+				audioLinkUV.y *= 0.0625;
+				float4 audioTexture = _AudioTexture.Sample(sampler_linear_clamp, audioLinkUV);
+				float audioVal = audioTexture.b * (0.5 /*_ALDecalVolume*/) * lerp((5.0 /*_ALDecalBaseBoost*/), (1.0 /*_ALDecalTrebleBoost*/), audioLinkMask.g);
+				float audioLinkValue = (1.0 /*_ALDecalLineWidth*/) < 1.0 ? abs(audioVal - audioLinkMask.r) < (1.0 /*_ALDecalLineWidth*/) : audioVal > audioLinkMask.r * 2.0;
+				audioLinkValue = saturate(audioLinkValue) * audioLinkMask.b;
+				audioLinkValue *= colorAndMask.a;
+				if (!poiMods.audioLinkAvailable)
+				{
+					audioLinkValue = 0;
+				}
+				float3 alColorChord = _AudioTexture.Sample(sampler_linear_clamp, float2(maskX, 24.5 / 64.0)).rgb;
+				float volumeColorSrc = audioLinkMask.g;
+				if ((1.0 /*_ALDecalVolumeColorSource*/) == 1) volumeColorSrc = audioLinkMask.r;
+				if ((1.0 /*_ALDecalVolumeColorSource*/) == 2) volumeColorSrc = audioVal;
+				float3 lowColor = float4(0,0,1,1).rgb * poiThemeColor(poiMods, float4(0,0,1,1).rgb, (0.0 /*_ALDecalVolumeColorLowThemeIndex*/));
+				float3 midColor = float4(0,1,0,1).rgb * poiThemeColor(poiMods, float4(0,1,0,1).rgb, (0.0 /*_ALDecalVolumeColorMidThemeIndex*/));
+				float3 highColor = float4(1,0,0,1).rgb * poiThemeColor(poiMods, float4(1,0,0,1).rgb, (0.0 /*_ALDecalVolumeColorHighThemeIndex*/));
+				float3 volumeColor = lerp(lowColor, midColor, saturate(volumeColorSrc * 2));
+				volumeColor = lerp(volumeColor, highColor, saturate(volumeColorSrc * 2 - 1));
+				float3 emissionColor = lerp(lowColor * (0.0 /*_ALDecalLowEmission*/), midColor * (0.0 /*_ALDecalMidEmission*/), saturate(volumeColorSrc * 2));
+				emissionColor = lerp(emissionColor, highColor * (0.0 /*_ALDecalHighEmission*/), saturate(volumeColorSrc * 2 - 1));
+				#if defined(POI_PASS_BASE) || defined(POI_PASS_ADD)
+				poiFragData.emission += emissionColor * audioLinkValue;
+				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor, customBlend(poiFragData.baseColor, volumeColor * colorAndMask.rgb, (0.0 /*_ALDecalBlendType*/)), saturate((1.0 /*_ALDecalBlendAlpha*/) * audioLinkValue));
+				#endif
+				poiFragData.alpha = lerp(poiFragData.alpha, poiFragData.alpha * audioLinkValue, (0.0 /*_ALDecalControlsAlpha*/));
 			}
 			#endif
 			#endif
@@ -7432,8 +7648,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 				applyDecals(poiFragData, poiMesh, poiCam, poiMods, poiLight);
 				#endif
 				#ifdef POI_AUDIOLINK
-				#ifdef POI_AL_VOLUMECOLOR
-				ApplyAudioLinkVolumeColor(poiMesh, poiFragData, poiMods);
+				#ifdef POI_AL_DECAL
+				ApplyAudioLinkDecal(poiMesh, poiFragData, poiMods);
 				#endif
 				#endif
 				#ifdef _GLOSSYREFLECTIONS_OFF
@@ -7530,7 +7746,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 			BlendOp [_BlendOp], [_BlendOpAlpha]
 			Blend [_SrcBlend] [_DstBlend], [_SrcBlendAlpha] [_DstBlendAlpha]
 			CGPROGRAM
- #define POI_AL_VOLUMECOLOR 
+ #define POI_AL_DECAL 
  #define POI_AUDIOLINK 
  #define VIGNETTE_MASKED 
  #define _GLOSSYREFLECTIONS_OFF 
@@ -7746,6 +7962,51 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 			float _AudioLinkCCStripY;
 			float _AudioLinkBandOverridesEnabled;
 			float4 _AudioLinkBandOverrideSliders;
+			#endif
+			#ifdef POI_AUDIOLINK
+			#ifdef POI_AL_DECAL
+			float _ALDecalUV;
+			float4 _ALUVScale;
+			float2 _ALUVPosition;
+			float _ALUVRotation;
+			float _ALUVRotationSpeed;
+			float4 _ALDecaldCircleDimensions;
+			float _ALDecalUVMode;
+			float _ALDecalVolumeStep;
+			float _ALDecalVolumeClipMin;
+			float _ALDecalVolumeClipMax;
+			float _ALDecalBandStep;
+			float _ALDecalBandClipMin;
+			float _ALDecalBandClipMax;
+			float _ALDecalShapeClip;
+			float _ALDecalShapeClipVolumeWidth;
+			float _ALDecalShapeClipBandWidth;
+			#if defined(PROP_ALDECALCOLORMASK) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _ALDecalColorMask;
+			float4 _ALDecalColorMask_ST;
+			float2 _ALDecalColorMaskPan;
+			float _ALDecalColorMaskUV;
+			#endif
+			float _ALDecalVolume;
+			float _ALDecalBaseBoost;
+			float _ALDecalTrebleBoost;
+			float _ALDecalLineWidth;
+			float _ALDecalVolumeColorSource;
+			float3 _ALDecalVolumeColorLow;
+			float _ALDecalVolumeColorLowThemeIndex;
+			float3 _ALDecalVolumeColorMid;
+			float _ALDecalVolumeColorMidThemeIndex;
+			float3 _ALDecalVolumeColorHigh;
+			float _ALDecalVolumeColorHighThemeIndex;
+			float _ALDecalLowEmission;
+			float _ALDecalMidEmission;
+			float _ALDecalHighEmission;
+			float _ALDecalBlendType;
+			float _ALDecalBlendAlpha;
+			float _ALDecalControlsAlpha;
+			float _ALDecalGlobalMask;
+			float _ALDecalGlobalMaskBlendType;
+			#endif
 			#endif
 			struct appdata
 			{
@@ -9646,6 +9907,87 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 				float3 viewDirection = normalize(lerp(getCameraPosition().xyz, _WorldSpaceCameraPos.xyz, (1.0 /*_PanoUseBothEyes*/)) - poiMesh.worldPos.xyz) * - 1;
 				return lerp(MonoPanoProjection(viewDirection), StereoPanoProjection(viewDirection), (0.0 /*_StereoEnabled*/));
 			}
+			#ifdef POI_AUDIOLINK
+			#ifdef POI_AL_DECAL
+			void ApplyAudioLinkDecal(in PoiMesh poiMesh, inout PoiFragData poiFragData, in PoiMods poiMods)
+			{
+				float4 colorAndMask = float4(1, 1, 1, 1);
+				#if defined(PROP_ALDECALCOLORMASK) || !defined(OPTIMIZER_ENABLED)
+				colorAndMask = POI2D_SAMPLER_PAN(_ALDecalColorMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_ALDecalColorMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0));
+				#endif
+				if ((0.0 /*_ALDecalGlobalMask*/) > 0)
+				{
+					colorAndMask.a = customBlend(colorAndMask.a, poiMods.globalMask[(0.0 /*_ALDecalGlobalMask*/)-1], (2.0 /*_ALDecalGlobalMaskBlendType*/));
+				}
+				float2 uv = poiMesh.uv[(0.0 /*_ALDecalUV*/)];
+				float2 decalCenter = float4(0.5,0.5,1,1);
+				float theta = radians((0.0 /*_ALUVRotation*/) + _Time.z * (0.0 /*_ALUVRotationSpeed*/));
+				float cs = cos(theta);
+				float sn = sin(theta);
+				uv = float2((uv.x - decalCenter.x) * cs - (uv.y - decalCenter.y) * sn + decalCenter.x, (uv.x - decalCenter.x) * sn + (uv.y - decalCenter.y) * cs + decalCenter.y);
+				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0.5,0.5,1,1), float4(1,1,1,1).yw / 2 + float4(0.5,0.5,1,1), float2(0, 0), float2(1, 1));
+				float4 audioLinkMask = 1.0;
+				float2 aluv = uv;
+				if ((0.0 /*_ALDecalUVMode*/) == 1)
+				{
+					float2 uvdir = uv * 2 - 1;
+					aluv.x = frac(atan2(uvdir.y, uvdir.x) * UNITY_INV_TWO_PI);
+					aluv.y = length(uvdir);
+				}
+				float maskY = aluv.y;
+				if ((0.0 /*_ALDecalUVMode*/) == 1)
+				{
+					maskY = remap(maskY, float4(0,1,0,1).x, float4(0,1,0,1).y, 0, 1);
+				}
+				float maskX = aluv.x;
+				if ((0.0 /*_ALDecalUVMode*/) == 1)
+				{
+					maskX = remap(maskX, float4(0,1,0,1).z, float4(0,1,0,1).w, 0, 1);
+				}
+				float maskVolume = (0.0 /*_ALDecalVolumeStep*/) != 0.0 ? floor(maskY * (0.0 /*_ALDecalVolumeStep*/)) / (0.0 /*_ALDecalVolumeStep*/) : maskY;
+				float maskBand = (0.0 /*_ALDecalBandStep*/) != 0.0 ? floor(maskX * (0.0 /*_ALDecalBandStep*/)) / (0.0 /*_ALDecalBandStep*/) : maskX;
+				audioLinkMask.r = maskVolume;
+				audioLinkMask.g = maskBand;
+				audioLinkMask.b = maskVolume < (0.0 /*_ALDecalVolumeClipMin*/) || maskVolume > (1.0 /*_ALDecalVolumeClipMax*/) ? 0.0 : audioLinkMask.b;
+				audioLinkMask.b = maskBand < (0.0 /*_ALDecalBandClipMin*/) || maskBand > (1.0 /*_ALDecalBandClipMax*/) ? 0.0 : audioLinkMask.b;
+				if ((0.0 /*_ALDecalShapeClip*/))
+				{
+					float volumeth = (0.5 /*_ALDecalShapeClipVolumeWidth*/);
+					if ((0.0 /*_ALDecalVolumeStep*/) != 0.0) audioLinkMask.b = frac(maskY * (0.0 /*_ALDecalVolumeStep*/)) > volumeth ? 0.0 : audioLinkMask.b;
+					float bandwidth = (0.0 /*_ALDecalUVMode*/) == 1 ? (0.5 /*_ALDecalShapeClipBandWidth*/) / aluv.y : (0.5 /*_ALDecalShapeClipBandWidth*/);
+					float bandth = 1.0 - bandwidth;
+					if ((0.0 /*_ALDecalBandStep*/) != 0.0) audioLinkMask.b = frac(maskX * (0.0 /*_ALDecalBandStep*/) + bandth * 0.5) < bandth ? 0.0 : audioLinkMask.b;
+				}
+				float2 audioLinkUV = float2(frac(audioLinkMask.g * 2.0), 4.5 / 4.0 + floor(audioLinkMask.g * 2.0) / 4.0);
+				audioLinkUV.y *= 0.0625;
+				float4 audioTexture = _AudioTexture.Sample(sampler_linear_clamp, audioLinkUV);
+				float audioVal = audioTexture.b * (0.5 /*_ALDecalVolume*/) * lerp((5.0 /*_ALDecalBaseBoost*/), (1.0 /*_ALDecalTrebleBoost*/), audioLinkMask.g);
+				float audioLinkValue = (1.0 /*_ALDecalLineWidth*/) < 1.0 ? abs(audioVal - audioLinkMask.r) < (1.0 /*_ALDecalLineWidth*/) : audioVal > audioLinkMask.r * 2.0;
+				audioLinkValue = saturate(audioLinkValue) * audioLinkMask.b;
+				audioLinkValue *= colorAndMask.a;
+				if (!poiMods.audioLinkAvailable)
+				{
+					audioLinkValue = 0;
+				}
+				float3 alColorChord = _AudioTexture.Sample(sampler_linear_clamp, float2(maskX, 24.5 / 64.0)).rgb;
+				float volumeColorSrc = audioLinkMask.g;
+				if ((1.0 /*_ALDecalVolumeColorSource*/) == 1) volumeColorSrc = audioLinkMask.r;
+				if ((1.0 /*_ALDecalVolumeColorSource*/) == 2) volumeColorSrc = audioVal;
+				float3 lowColor = float4(0,0,1,1).rgb * poiThemeColor(poiMods, float4(0,0,1,1).rgb, (0.0 /*_ALDecalVolumeColorLowThemeIndex*/));
+				float3 midColor = float4(0,1,0,1).rgb * poiThemeColor(poiMods, float4(0,1,0,1).rgb, (0.0 /*_ALDecalVolumeColorMidThemeIndex*/));
+				float3 highColor = float4(1,0,0,1).rgb * poiThemeColor(poiMods, float4(1,0,0,1).rgb, (0.0 /*_ALDecalVolumeColorHighThemeIndex*/));
+				float3 volumeColor = lerp(lowColor, midColor, saturate(volumeColorSrc * 2));
+				volumeColor = lerp(volumeColor, highColor, saturate(volumeColorSrc * 2 - 1));
+				float3 emissionColor = lerp(lowColor * (0.0 /*_ALDecalLowEmission*/), midColor * (0.0 /*_ALDecalMidEmission*/), saturate(volumeColorSrc * 2));
+				emissionColor = lerp(emissionColor, highColor * (0.0 /*_ALDecalHighEmission*/), saturate(volumeColorSrc * 2 - 1));
+				#if defined(POI_PASS_BASE) || defined(POI_PASS_ADD)
+				poiFragData.emission += emissionColor * audioLinkValue;
+				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor, customBlend(poiFragData.baseColor, volumeColor * colorAndMask.rgb, (0.0 /*_ALDecalBlendType*/)), saturate((1.0 /*_ALDecalBlendAlpha*/) * audioLinkValue));
+				#endif
+				poiFragData.alpha = lerp(poiFragData.alpha, poiFragData.alpha * audioLinkValue, (0.0 /*_ALDecalControlsAlpha*/));
+			}
+			#endif
+			#endif
 			float4 frag(VertexOut i, uint facing : SV_IsFrontFace) : SV_Target
 			{
 				UNITY_SETUP_INSTANCE_ID(i);
@@ -9796,6 +10138,11 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 				}
 				#endif
 				applyAlphaOptions(poiFragData, poiMesh, poiCam, poiMods);
+				#ifdef POI_AUDIOLINK
+				#ifdef POI_AL_DECAL
+				ApplyAudioLinkDecal(poiMesh, poiFragData, poiMods);
+				#endif
+				#endif
 				poiFragData.finalColor = poiFragData.baseColor;
 				if ((0.0 /*_IgnoreFog*/) == 0)
 				{
@@ -9824,7 +10171,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 			BlendOp [_BlendOp], [_BlendOpAlpha]
 			Blend [_SrcBlend] [_DstBlend], [_SrcBlendAlpha] [_DstBlendAlpha]
 			CGPROGRAM
- #define POI_AL_VOLUMECOLOR 
+ #define POI_AL_DECAL 
  #define POI_AUDIOLINK 
  #define VIGNETTE_MASKED 
  #define _GLOSSYREFLECTIONS_OFF 
@@ -10062,20 +10409,48 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/a0dea5cc8b48a774a9498de9ec68c0
 			float4 _AudioLinkBandOverrideSliders;
 			#endif
 			#ifdef POI_AUDIOLINK
-			#ifdef POI_AL_VOLUMECOLOR
-			float _ALVolumeColorUV;
-			float _ALVolumeColorDirection;
-			float _ALVolumeColorBlendType;
-			float _ALVolumeColorBlendAlpha;
-			float3 _ALVolumeColorLow;
-			float _ALVolumeColorLowThemeIndex;
-			float3 _ALVolumeColorMid;
-			float _ALVolumeColorMidThemeIndex;
-			float3 _ALVolumeColorHigh;
-			float _ALVolumeColorHighThemeIndex;
-			float _ALLowEmission;
-			float _ALMidEmission;
-			float _ALHighEmission;
+			#ifdef POI_AL_DECAL
+			float _ALDecalUV;
+			float4 _ALUVScale;
+			float2 _ALUVPosition;
+			float _ALUVRotation;
+			float _ALUVRotationSpeed;
+			float4 _ALDecaldCircleDimensions;
+			float _ALDecalUVMode;
+			float _ALDecalVolumeStep;
+			float _ALDecalVolumeClipMin;
+			float _ALDecalVolumeClipMax;
+			float _ALDecalBandStep;
+			float _ALDecalBandClipMin;
+			float _ALDecalBandClipMax;
+			float _ALDecalShapeClip;
+			float _ALDecalShapeClipVolumeWidth;
+			float _ALDecalShapeClipBandWidth;
+			#if defined(PROP_ALDECALCOLORMASK) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _ALDecalColorMask;
+			float4 _ALDecalColorMask_ST;
+			float2 _ALDecalColorMaskPan;
+			float _ALDecalColorMaskUV;
+			#endif
+			float _ALDecalVolume;
+			float _ALDecalBaseBoost;
+			float _ALDecalTrebleBoost;
+			float _ALDecalLineWidth;
+			float _ALDecalVolumeColorSource;
+			float3 _ALDecalVolumeColorLow;
+			float _ALDecalVolumeColorLowThemeIndex;
+			float3 _ALDecalVolumeColorMid;
+			float _ALDecalVolumeColorMidThemeIndex;
+			float3 _ALDecalVolumeColorHigh;
+			float _ALDecalVolumeColorHighThemeIndex;
+			float _ALDecalLowEmission;
+			float _ALDecalMidEmission;
+			float _ALDecalHighEmission;
+			float _ALDecalBlendType;
+			float _ALDecalBlendAlpha;
+			float _ALDecalControlsAlpha;
+			float _ALDecalGlobalMask;
+			float _ALDecalGlobalMaskBlendType;
 			#endif
 			#endif
 			#ifdef _GLOSSYREFLECTIONS_OFF
