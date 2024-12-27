@@ -6150,6 +6150,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VRCMirror (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2958517746811588876, guid: 70279d83763c0d745a4e513a75053671,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5499662108231401120, guid: 70279d83763c0d745a4e513a75053671,
         type: 3}
       propertyPath: m_ReflectLayers.m_Bits
@@ -6318,6 +6323,36 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 506771de2b6f16f4494d9cad34491466, type: 2}
+    - target: {fileID: 4270757549627169413, guid: a14ebe441762d1f43948a76bebcd9138,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8665732
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270757549627169413, guid: a14ebe441762d1f43948a76bebcd9138,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8665732
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270757549627169413, guid: a14ebe441762d1f43948a76bebcd9138,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.8665732
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270757549627169413, guid: a14ebe441762d1f43948a76bebcd9138,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.487
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270757549627169413, guid: a14ebe441762d1f43948a76bebcd9138,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.804
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270757549627169413, guid: a14ebe441762d1f43948a76bebcd9138,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1e-14
+      objectReference: {fileID: 0}
     - target: {fileID: 4779770148770221235, guid: a14ebe441762d1f43948a76bebcd9138,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6352,6 +6387,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3060892145169902611, guid: a14ebe441762d1f43948a76bebcd9138,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1653550994}
     - targetCorrespondingSourceObject: {fileID: -5830234071619649650, guid: a14ebe441762d1f43948a76bebcd9138,
         type: 3}
       insertIndex: -1
@@ -11692,6 +11731,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VRCMirror
       objectReference: {fileID: 0}
+    - target: {fileID: 2958517746811588876, guid: 70279d83763c0d745a4e513a75053671,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5499662108231401120, guid: 70279d83763c0d745a4e513a75053671,
         type: 3}
       propertyPath: m_ReflectLayers.m_Bits
@@ -11763,7 +11807,7 @@ Camera:
   far clip plane: 10
   field of view: 60
   orthographic: 1
-  orthographic size: 1.34
+  orthographic size: 1.35
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -11788,7 +11832,7 @@ Transform:
   m_GameObject: {fileID: 1201604394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.61, y: 7.06, z: -2.11}
+  m_LocalPosition: {x: 21.61, y: 7.09, z: -2.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12441,6 +12485,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41bca1938a488fd4e8339d9827b1fcb3, type: 3}
+--- !u!1 &1653550990 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3060892145169902611, guid: a14ebe441762d1f43948a76bebcd9138,
+    type: 3}
+  m_PrefabInstance: {fileID: 641585827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1653550994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653550990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1889044836, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 1509276058}
+  materialIndex: 0
+  textureProperty: _Albedo
+  useSharedMaterial: 1
 --- !u!1001 &1686990443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13424,7 +13490,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d454379c09e0d3849a7522fdb4da6179, type: 2}
   - {fileID: 2100000, guid: 0723c64b9800c9649a0a31cdf0263d31, type: 2}
   - {fileID: 2100000, guid: ecd04b5c6709dce419c2aeb980ea73a2, type: 2}
-  - {fileID: 2100000, guid: c815f7613a04b724089c206857e57c6a, type: 2}
   - {fileID: 2100000, guid: b58c96b56252ac34eb0e424e83066f2a, type: 2}
   - {fileID: 2100000, guid: 2815cae3728ad874ab87b8c4a695f61b, type: 2}
   - {fileID: 2100000, guid: eb778de77f94e74489492aafdb270eec, type: 2}
