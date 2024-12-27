@@ -3405,7 +3405,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/42f69a3252019374085165b8c61e5e
 				float2 mainUV = poiUV(poiMesh.uv[(0.0 /*_MainTexUV*/)].xy, float4(1,1,0,0));
 				if ((0.0 /*_MainPixelMode*/))
 				{
-					mainUV = sharpSample(float4(1,1,1,1), mainUV);
+					mainUV = sharpSample(float4(0.001953125,0.001953125,512,512), mainUV);
 				}
 				float4 mainTexture = POI2D_SAMPLER_PAN_STOCHASTIC(_MainTex, _MainTex, mainUV, float4(0,0,0,0), (0.0 /*_MainTexStochastic*/));
 				#if defined(PROP_BUMPMAP) || !defined(OPTIMIZER_ENABLED)
@@ -3775,8 +3775,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/42f69a3252019374085165b8c61e5e
 				poiLight.lightMapNoAttenuation = poiLight.lightMap;
 				poiLight.lightMap *= lerp(1, poiLight.additiveShadow, poiLight.attenuationStrength);
 				#endif
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(0.01722687,0.017925,0.03251993,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(0.01722687,0.017925,0.03251993,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(0.03744158,0.03744158,0.1436938,1).rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * float4(0.03744158,0.03744158,0.1436938,1).a;
 				#if defined(PROP_ALPHAMASK) || !defined(OPTIMIZER_ENABLED)
 				if ((2.0 /*_MainAlphaMaskMode*/))
 				{
@@ -6812,7 +6812,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/42f69a3252019374085165b8c61e5e
 				float2 mainUV = poiUV(poiMesh.uv[(0.0 /*_MainTexUV*/)].xy, float4(1,1,0,0));
 				if ((0.0 /*_MainPixelMode*/))
 				{
-					mainUV = sharpSample(float4(1,1,1,1), mainUV);
+					mainUV = sharpSample(float4(0.001953125,0.001953125,512,512), mainUV);
 				}
 				float4 mainTexture = POI2D_SAMPLER_PAN_STOCHASTIC(_MainTex, _MainTex, mainUV, float4(0,0,0,0), (0.0 /*_MainTexStochastic*/));
 				#if defined(PROP_BUMPMAP) || !defined(OPTIMIZER_ENABLED)
@@ -7182,8 +7182,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/42f69a3252019374085165b8c61e5e
 				poiLight.lightMapNoAttenuation = poiLight.lightMap;
 				poiLight.lightMap *= lerp(1, poiLight.additiveShadow, poiLight.attenuationStrength);
 				#endif
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(0.01722687,0.017925,0.03251993,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(0.01722687,0.017925,0.03251993,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(0.03744158,0.03744158,0.1436938,1).rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * float4(0.03744158,0.03744158,0.1436938,1).a;
 				#if defined(PROP_ALPHAMASK) || !defined(OPTIMIZER_ENABLED)
 				if ((2.0 /*_MainAlphaMaskMode*/))
 				{
@@ -9211,7 +9211,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/42f69a3252019374085165b8c61e5e
 				float2 mainUV = poiUV(poiMesh.uv[(0.0 /*_MainTexUV*/)].xy, float4(1,1,0,0));
 				if ((0.0 /*_MainPixelMode*/))
 				{
-					mainUV = sharpSample(float4(1,1,1,1), mainUV);
+					mainUV = sharpSample(float4(0.001953125,0.001953125,512,512), mainUV);
 				}
 				float4 mainTexture = POI2D_SAMPLER_PAN_STOCHASTIC(_MainTex, _MainTex, mainUV, float4(0,0,0,0), (0.0 /*_MainTexStochastic*/));
 				#if defined(PROP_BUMPMAP) || !defined(OPTIMIZER_ENABLED)
@@ -9251,8 +9251,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/42f69a3252019374085165b8c61e5e
 				poiCam.vDotN = abs(dot(poiCam.viewDir, poiMesh.normals[1]));
 				poiCam.worldDirection.xyz = poiMesh.worldPos.xyz - poiCam.worldPos;
 				poiCam.worldDirection.w = dot(poiCam.clipPos, CalculateFrustumCorrection());
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(0.01722687,0.017925,0.03251993,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(0.01722687,0.017925,0.03251993,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(0.03744158,0.03744158,0.1436938,1).rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * float4(0.03744158,0.03744158,0.1436938,1).a;
 				#if defined(PROP_ALPHAMASK) || !defined(OPTIMIZER_ENABLED)
 				if ((2.0 /*_MainAlphaMaskMode*/))
 				{
@@ -11737,7 +11737,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/42f69a3252019374085165b8c61e5e
 				float2 mainUV = poiUV(poiMesh.uv[(0.0 /*_MainTexUV*/)].xy, float4(1,1,0,0));
 				if ((0.0 /*_MainPixelMode*/))
 				{
-					mainUV = sharpSample(float4(1,1,1,1), mainUV);
+					mainUV = sharpSample(float4(0.001953125,0.001953125,512,512), mainUV);
 				}
 				float4 mainTexture = POI2D_SAMPLER_PAN_STOCHASTIC(_MainTex, _MainTex, mainUV, float4(0,0,0,0), (0.0 /*_MainTexStochastic*/));
 				#if defined(PROP_BUMPMAP) || !defined(OPTIMIZER_ENABLED)
@@ -11778,8 +11778,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon World/42f69a3252019374085165b8c61e5e
 				poiCam.worldDirection.xyz = poiMesh.worldPos.xyz - poiCam.worldPos;
 				poiCam.worldDirection.w = dot(poiCam.clipPos, CalculateFrustumCorrection());
 				calculateGlobalThemes(poiMods);
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(0.01722687,0.017925,0.03251993,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(0.01722687,0.017925,0.03251993,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(0.03744158,0.03744158,0.1436938,1).rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * float4(0.03744158,0.03744158,0.1436938,1).a;
 				#if defined(PROP_ALPHAMASK) || !defined(OPTIMIZER_ENABLED)
 				if ((2.0 /*_MainAlphaMaskMode*/))
 				{
