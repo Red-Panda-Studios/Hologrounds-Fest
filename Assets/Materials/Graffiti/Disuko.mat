@@ -52,17 +52,17 @@ Material:
     - _Blend: 2
     - _CullMode: 2
     - _Depth: 3
-    - _DepthMap: 3
+    - _DepthMap: 5
     - _DstBlend: 1
     - _GlossyReflections: 1
     - _Invert_Depth: 0
     - _Normal_Strength: 0.01
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scan_Line_Angle: 20
+    - _Scan_Line_Angle: 90
     - _Scan_Line_Movement: 3
     - _Scan_Line_Overbrighten: 0.85
-    - _Scan_Line_Size: 42
+    - _Scan_Line_Size: 100
     - _Scan_Line_Warp_Strength: 0.02
     - _SpecularHighlights: 1
     - _SrcBlend: 5

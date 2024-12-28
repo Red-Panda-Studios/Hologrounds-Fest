@@ -59,7 +59,7 @@ Material:
     - _Normal_Strength: 0.01
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scan_Line_Angle: 130
+    - _Scan_Line_Angle: 90
     - _Scan_Line_Movement: 3
     - _Scan_Line_Overbrighten: 0.85
     - _Scan_Line_Size: 100
