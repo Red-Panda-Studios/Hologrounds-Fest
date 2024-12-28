@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.vrchat.core.vpm-resolver": {
+      "version": "0.1.29"
+    },
+    "com.poiyomi.toon": {
+      "version": "9.0.61"
+    },
     "com.vrchat.base": {
       "version": "3.7.5"
     },
@@ -26,6 +32,14 @@
     }
   },
   "locked": {
+    "com.vrchat.core.vpm-resolver": {
+      "version": "0.1.29",
+      "dependencies": {}
+    },
+    "com.poiyomi.toon": {
+      "version": "9.0.61",
+      "dependencies": {}
+    },
     "com.vrchat.base": {
       "version": "3.7.5",
       "dependencies": {}

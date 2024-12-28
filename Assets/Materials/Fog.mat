@@ -60,7 +60,7 @@ Material:
     - _OutlineStencilZFailBack: 0
     - _OutlineStencilZFailFront: 0
     - _PhaseOffset: 1.1
-    - _PhaseSize: 0.1
+    - _PhaseSize: 0
     - _PhaseSpeed: 0
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -93,7 +93,7 @@ Material:
     - _GridTopColor: {r: 0, g: 0, b: 0, a: 1}
     - _GridZColorScaling: {r: -20, g: 0, b: 0, a: 0}
     - _PhaseMovementDirection: {r: 0, g: 0, b: 0, a: 0}
-    - _Tint: {r: 1, g: 0, b: 0, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2682432799149381436
 MonoBehaviour:
