@@ -91,7 +91,7 @@ Material:
     - _GridBottomColor: {r: 0.4669811, g: 1, b: 0.9656117, a: 1}
     - _GridMovement: {r: 2.64, g: 0.11, b: 1.04, a: 0}
     - _GridTopColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GridZColorScaling: {r: -4.83, g: 1.84, b: 0, a: 0}
+    - _GridZColorScaling: {r: -13.15, g: 1.84, b: 0, a: 0}
     - _PhaseMovementDirection: {r: -0.1, g: 0, b: 0, a: 0}
     - _Tint: {r: 1, g: 1, b: 1, a: 0.85882354}
   m_BuildTextureStacks: []
