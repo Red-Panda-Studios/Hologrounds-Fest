@@ -52,7 +52,7 @@ Material:
     - _Blend: 2
     - _CullMode: 2
     - _Depth: 3
-    - _DepthMap: 2
+    - _DepthMap: 3
     - _DstBlend: 1
     - _GlossyReflections: 1
     - _Invert_Depth: 1

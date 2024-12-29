@@ -1,19 +1,7 @@
 {
   "dependencies": {
-    "com.acchosen.vr-stage-lighting": {
-      "version": "file:com.acchosen.vr-stage-lighting",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.llealloo.audiolink": {
       "version": "file:com.llealloo.audiolink",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
-    "com.poiyomi.toon": {
-      "version": "file:com.poiyomi.toon",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
