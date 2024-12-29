@@ -3,14 +3,8 @@
     "com.vrchat.core.vpm-resolver": {
       "version": "0.1.29"
     },
-    "com.poiyomi.toon": {
-      "version": "9.0.61"
-    },
     "com.vrchat.base": {
       "version": "3.7.5"
-    },
-    "com.vrchat.core.vpm-resolver": {
-      "version": "0.1.29"
     },
     "com.llealloo.audiolink": {
       "version": "2.0.0"
@@ -21,14 +15,14 @@
     "io.z3y.github.shadergraph": {
       "version": "1.0.8"
     },
+    "com.vrchat.worlds": {
+      "version": "3.7.5"
+    },
     "com.poiyomi.toon": {
       "version": "9.0.61"
     },
     "com.acchosen.vr-stage-lighting": {
       "version": "2.7.1"
-    },
-    "com.vrchat.worlds": {
-      "version": "3.7.5"
     }
   },
   "locked": {
@@ -36,16 +30,8 @@
       "version": "0.1.29",
       "dependencies": {}
     },
-    "com.poiyomi.toon": {
-      "version": "9.0.61",
-      "dependencies": {}
-    },
     "com.vrchat.base": {
       "version": "3.7.5",
-      "dependencies": {}
-    },
-    "com.vrchat.core.vpm-resolver": {
-      "version": "0.1.29",
       "dependencies": {}
     },
     "com.llealloo.audiolink": {
@@ -60,6 +46,12 @@
       "version": "1.0.8",
       "dependencies": {}
     },
+    "com.vrchat.worlds": {
+      "version": "3.7.5",
+      "dependencies": {
+        "com.vrchat.base": "3.7.5"
+      }
+    },
     "com.poiyomi.toon": {
       "version": "9.0.61",
       "dependencies": {}
@@ -68,12 +60,6 @@
       "version": "2.7.1",
       "dependencies": {
         "com.llealloo.audiolink": ">=0.3.1"
-      }
-    },
-    "com.vrchat.worlds": {
-      "version": "3.7.5",
-      "dependencies": {
-        "com.vrchat.base": "3.7.5"
       }
     }
   }
