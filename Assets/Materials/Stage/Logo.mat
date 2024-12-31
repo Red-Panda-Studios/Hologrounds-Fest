@@ -13,9 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - BSSBLOOMFOGTYPE_HEIGHT
-  - POI_AL_VOLUMECOLOR
   - POI_AUDIOLINK
-  - _GLOSSYREFLECTIONS_OFF
   - _LIGHTINGMODE_FLAT
   - _RIM2STYLE_POIYOMI
   - _RIMSTYLE_POIYOMI
@@ -1316,10 +1314,10 @@ Material:
     - _EnableOutlines: 1
     - _EnablePathing: 0
     - _EnableRim2Lighting: 0
-    - _EnableRimLighting: 1
+    - _EnableRimLighting: 0
     - _EnableTouchGlow: 0
     - _EnableUDIMDiscardOptions: 0
-    - _EnableVolumeColor: 1
+    - _EnableVolumeColor: 0
     - _FFBFOutlineStencilHelp0: 0
     - _FFBFOutlineStencilHelp1: 0
     - _FFBFStencilHelp0: 0
@@ -2820,7 +2818,7 @@ Material:
     - m_renderingCategory: 0
     - m_specialFXCategory: 0
     - m_start_ALDecalSpectrum: 0
-    - m_start_ALVolumeColor: 1
+    - m_start_ALVolumeColor: 0
     - m_start_Alpha: 0
     - m_start_Aniso: 0
     - m_start_BeatsaberBloomFog: 0
@@ -2894,7 +2892,7 @@ Material:
     - m_start_PoiUVCategory: 0
     - m_start_RGBMask: 0
     - m_start_Rim2AudioLink: 0
-    - m_start_RimAudioLink: 0
+    - m_start_RimAudioLink: 1
     - m_start_SphericalDissolve: 0
     - m_start_StencilPassBackOptions: 0
     - m_start_StencilPassFrontOptions: 0
@@ -2945,7 +2943,7 @@ Material:
     - m_start_postprocess: 0
     - m_start_reflectionRim: 0
     - m_start_rim2LightOptions: 0
-    - m_start_rimLight1Options: 1
+    - m_start_rimLight1Options: 0
     - m_start_stylizedSpec: 0
     - m_start_subsurfaceScattering: 0
     - m_start_udimdiscardOptions: 0
